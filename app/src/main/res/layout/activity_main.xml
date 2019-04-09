@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/ic_capuccino"
+            android:layout_width="120dp"
+            android:layout_height="85dp"
+            android:layout_margin="15dp"
+            />
+        <ImageView
+            android:id="@+id/dollar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_money_black" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/costOfCapuchino"
+            android:layout_centerVertical="true"
+            android:text="order"
+            android:textColor="@color/colorPrimaryDark"
+            tools:layout_editor_absoluteX="178dp"
+            tools:layout_editor_absoluteY="100dp" />
+
+        <TextView
+            android:id="@+id/costOfCapuchino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/dollar"
+            android:layout_centerVertical="true"
+            android:text="34"
+            android:layout_margin="10dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/TotalAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/imageViewOfdollar"
+            android:text="0"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Total Amount:"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/imageViewOfCart"/>
+
+        <ImageView
+            android:id="@+id/imageViewOfCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_shopping_cart"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="10dp"/>
+
+        <ImageView
+            android:id="@+id/imageViewOfdollar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_money_black"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"/>
+    </RelativeLayout>
+
+</RelativeLayout>
