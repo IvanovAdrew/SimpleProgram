@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 TextView textViewOfTotalAmount = (TextView) findViewById(R.id.TotalAmount);
                 howMuchOreder+=costOfCapuchino;
-                textViewOfTotalAmount.setText(howMuchOreder);
+                String howMuchOrederReal = ""+howMuchOreder;
+                textViewOfTotalAmount.setText(howMuchOrederReal);
             }
         });
     }
