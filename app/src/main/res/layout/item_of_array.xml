@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <ImageView
+            android:src="@drawable/ic_capuccino"
+            android:layout_width="120dp"
+            android:layout_height="85dp"
+            android:layout_margin="15dp"
+            />
+        <ImageView
+            android:id="@+id/dollar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_money_black" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/costOfCapuchino"
+            android:layout_centerVertical="true"
+            android:text="order"
+            android:textColor="@color/colorPrimaryDark"
+            tools:layout_editor_absoluteX="178dp"
+            tools:layout_editor_absoluteY="100dp" />
+
+        <TextView
+            android:id="@+id/costOfCapuchino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/dollar"
+            android:layout_centerVertical="true"
+            android:text="34"
+            android:layout_margin="10dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30dp"/>
+</RelativeLayout>
