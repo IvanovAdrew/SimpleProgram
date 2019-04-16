@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    int newFeature=67;
+    int tooNewFeature=68;
     int howMuchOreder;
     int costOfCapuchino=34;
     @Override
@@ -28,4 +30,5 @@ public class MainActivity extends AppCompatActivity {
         howMuchOreder+=costOfCapuchino;
         textViewOfTotalAmount.setText(howMuchOreder);
     }*/
+
 }
