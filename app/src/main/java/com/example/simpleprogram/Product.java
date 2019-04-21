@@ -7,7 +7,15 @@ public class Product {
     private int costOfProducts;
     @DrawableRes
     private int photoId;
+    private int quantity;
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
     public Product(String name, int costOfProducts, int photoId) {
         this.name = name;
