@@ -29,7 +29,8 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
         Product newItem = getItem(position);
         vh.image1.setImageResource(newItem.getPhotoId());
         vh.name.setText(newItem.getName());
-        //vh.price.setText(newItem.getCostOfProducts());
+        String costProduct = ""+newItem.getCostOfProducts();
+        vh.price.setText(costProduct);
         return v;
     }
 }
@@ -40,7 +41,7 @@ class ViewHolder{
     ImageView image1;
 
     public ViewHolder(View v) {
-        //this.price = (TextView)v.findViewById(R.id.costOfCapuchino);
+        this.price = (TextView)v.findViewById(R.id.costOfCapuchino);
         this.name = (TextView)v.findViewById(R.id.name);
         //this.button1 = (TextView)v.findViewById(R.id.costOfCapuchino);
         this.image1 = (ImageView) v.findViewById(R.id.cupOfSomething);
