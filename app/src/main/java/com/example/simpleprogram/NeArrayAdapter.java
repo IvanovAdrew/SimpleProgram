@@ -33,6 +33,7 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
         vh.price.setText(costProduct);
         return v;
     }
+
 }
 class ViewHolder{
     TextView price;

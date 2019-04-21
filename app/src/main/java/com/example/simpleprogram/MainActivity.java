@@ -15,10 +15,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Product[] product =new Product[3];
-        product[0]=new Product("macha1",67,R.drawable.ic_capuccino);
-        product[1]=new Product("macha2",56,R.drawable.ic_capuccino);
-        product[2]=new Product("macha3",78,R.drawable.ic_capuccino);
+        Product[] product =new Product[5];
+        product[0]=new Product("Capuchino",67,R.drawable.ic_capuccino);
+        product[1]=new Product("Americano",56,R.drawable.americano);
+        product[2]=new Product("Coffe",78,R.drawable.expresso);
+        product[3]=new Product("Flat_white",79,R.drawable.flat_white);
+        product[4]=new Product("Mocha",56,R.drawable.mocha);
         ListView listOfCappuchino = (ListView)findViewById(R.id.listView);
         NeArrayAdapter adapter= new NeArrayAdapter(this,android.R.layout.simple_list_item_1,product);
         listOfCappuchino.setAdapter(adapter);
