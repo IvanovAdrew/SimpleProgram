@@ -4,7 +4,17 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools">
 
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@+id/cupOfSomething"/>
+
         <ImageView
+            android:id="@+id/cupOfSomething"
             android:src="@drawable/ic_capuccino"
             android:layout_width="120dp"
             android:layout_height="85dp"
