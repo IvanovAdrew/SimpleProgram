@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
         product[3]=new Product("Flat_white",79,R.drawable.flat_white);
         product[4]=new Product("Mocha",56,R.drawable.mocha);
         ListView listOfCappuchino = (ListView)findViewById(R.id.listView);
-        NeArrayAdapter adapter= new NeArrayAdapter(this,android.R.layout.simple_list_item_1,product);
+        TextView costOfAll=(TextView)findViewById(R.id.TotalAmount);
+        NeArrayAdapter adapter= new NeArrayAdapter(this,android.R.layout.simple_list_item_1,product,costOfAll);
         listOfCappuchino.setAdapter(adapter);
         /*Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
