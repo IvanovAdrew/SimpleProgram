@@ -62,6 +62,9 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
             this.image1 = (ImageView) v.findViewById(R.id.cupOfSomething);
             this.decrease = (ImageView) v.findViewById(R.id.decrease);
             this.increase = (ImageView) v.findViewById(R.id.increase);
+            btnOrder.setOnClickListener(this);
+            increase.setOnClickListener(this);
+            decrease.setOnClickListener(this);
         }
 
 
@@ -75,14 +78,23 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
                     this.amount.setVisibility(View.VISIBLE);
                     this.decrease.setVisibility(View.VISIBLE);
                     this.increase.setVisibility(View.VISIBLE);
+                    break;
                 case (R.id.decrease):
                     amount--;
+                    if (amount<2){
+                        this.btnOrder.setVisibility(View.VISIBLE);
+                        this.amount.setVisibility(View.GONE);
+                        this.decrease.setVisibility(View.GONE);
+                        this.increase.setVisibility(View.GONE);
+                    }
+                    break;
                 case (R.id.increase):
                     amount++;
+                    break;
             }
             product.setQuantity(amount);
             notifyDataSetChanged();
-            listener.onChanged();
+            //listener.onChanged();
         }
     }
 }
