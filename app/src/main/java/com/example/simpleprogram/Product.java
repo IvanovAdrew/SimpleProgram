@@ -8,6 +8,15 @@ public class Product {
     @DrawableRes
     private int photoId;
     private int quantity;
+    static private int costOfAllInt;
+
+    public int getCostOfAllInt() {
+        return costOfAllInt;
+    }
+
+    public void setCostOfAllInt(int costOfAllInt) {
+        this.costOfAllInt = costOfAllInt;
+    }
 
     public int getQuantity() {
         return quantity;

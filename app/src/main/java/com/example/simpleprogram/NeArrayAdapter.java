@@ -12,15 +12,8 @@ import android.widget.TextView;
 
 public class NeArrayAdapter extends ArrayAdapter<Product> {
     private ProductAmountChangesListener listener;
-    int costOfAllInt;
     TextView costOfAll;
-    public int getCostOfAllInt() {
-        return costOfAllInt;
-    }
 
-    public void setCostOfAllInt(int costOfAllInt) {
-        this.costOfAllInt = costOfAllInt;
-    }
     public void setListener(ProductAmountChangesListener listener) {
         this.listener = listener;
     }
@@ -40,7 +33,7 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
         Product newItem = getItem(position);
         if (v == null) {
             v = inflater.inflate(R.layout.item_of_array, parent, false);
-            vh = new ViewHolder(v, newItem,costOfAll,this);
+            vh = new ViewHolder(v, newItem,costOfAll);
             v.setTag(vh);
         } else {
             vh = (ViewHolder) (v.getTag());
@@ -64,12 +57,11 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
         ImageView decrease;
         ImageView increase;
         View relative;
-        NeArrayAdapter objOfArrayAdapater;
         //int costOfAllInt;
         String costOfAllStr;
 
 
-        public ViewHolder(View v, Product product,TextView costOfAll,NeArrayAdapter objOfArrayAdptr) {
+        public ViewHolder(View v, Product product,TextView costOfAll) {
             this.product = product;
             this.amount = (TextView) v.findViewById(R.id.quantity);
             this.price = (TextView) v.findViewById(R.id.costOfCapuchino);
@@ -78,10 +70,8 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
             this.image1 = (ImageView) v.findViewById(R.id.cupOfSomething);
             this.decrease = (ImageView) v.findViewById(R.id.decrease);
             this.increase = (ImageView) v.findViewById(R.id.increase);
-            this.objOfArrayAdapater=objOfArrayAdptr;
             this.costOfAll = costOfAll;
             this.relative = v.findViewById(R.id.relative_layout);
-
             btnOrder.setOnClickListener(this);
             increase.setOnClickListener(this);
             decrease.setOnClickListener(this);
@@ -102,9 +92,9 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
                     this.increase.setVisibility(View.VISIBLE);
                     stringOfAmount = ""+amount;
                     this.amount.setText(stringOfAmount);
-                    objOfArrayAdapater.setCostOfAllInt(objOfArrayAdapater.getCostOfAllInt()+product.getCostOfProducts());
+                    product.setCostOfAllInt(product.getCostOfAllInt()+product.getCostOfProducts());
                     /*costOfAllInt+=product.getCostOfProducts();*/
-                    costOfAllStr=""+objOfArrayAdapater.getCostOfAllInt();
+                    costOfAllStr=""+product.getCostOfAllInt();
                     costOfAll.setText(costOfAllStr);
                     break;
 
@@ -117,9 +107,9 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
                         this.decrease.setVisibility(View.GONE);
                         this.increase.setVisibility(View.GONE);
                     }
-                    objOfArrayAdapater.setCostOfAllInt(objOfArrayAdapater.getCostOfAllInt()-product.getCostOfProducts());
+                    product.setCostOfAllInt(product.getCostOfAllInt()-product.getCostOfProducts());
                     /*costOfAllInt+=product.getCostOfProducts();*/
-                    costOfAllStr=""+objOfArrayAdapater.getCostOfAllInt();
+                    costOfAllStr=""+product.getCostOfAllInt();
                     costOfAll.setText(costOfAllStr);
                     stringOfAmount = ""+amount;
                     this.amount.setText(stringOfAmount);
@@ -129,9 +119,9 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
                     amount++;
                     stringOfAmount = ""+amount;
                     this.amount.setText(stringOfAmount);
-                    objOfArrayAdapater.setCostOfAllInt(objOfArrayAdapater.getCostOfAllInt()+product.getCostOfProducts());
+                    product.setCostOfAllInt(product.getCostOfAllInt()+product.getCostOfProducts());
                     /*costOfAllInt+=product.getCostOfProducts();*/
-                    costOfAllStr=""+objOfArrayAdapater.getCostOfAllInt();
+                    costOfAllStr=""+product.getCostOfAllInt();
                     costOfAll.setText(costOfAllStr);
                     break;
 
