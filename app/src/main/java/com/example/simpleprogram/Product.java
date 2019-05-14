@@ -8,6 +8,7 @@ public class Product {
     @DrawableRes
     private int photoId;
     private int quantity;
+    private int costOfAllInEach;
     static private int costOfAllInt;
 
     public int getCostOfAllInt() {

@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     TextView costOfAll;
     String costOfAllStr;
     Product[] products =new Product[5];
-    HashMap array;
+    HashMap<Integer,Product> array;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +25,14 @@ public class MainActivity extends AppCompatActivity {
         products[2]=new Product("Coffe",78,R.drawable.expresso);
         products[3]=new Product("Flat_white",79,R.drawable.flat_white);
         products[4]=new Product("Mocha",56,R.drawable.mocha);
+        Integer[] arrayInt=new Integer[5];
+        for(int i =0;i<5;i++){
+
+            array.put(arrayInt[i],products[i]);
+        }
         ListView listOfCappuchino = (ListView)findViewById(R.id.listView);
         costOfAll=(TextView)findViewById(R.id.TotalAmount);
-        NeArrayAdapter adapter= new NeArrayAdapter(this,android.R.layout.simple_list_item_1,products);
+        NeArrayAdapter adapter= new NeArrayAdapter(this,android.R.layout.simple_list_item_1,products,array);
         adapter.setListener(new NeArrayAdapter.ProductAmountChangesListener() {
             @Override
             public void onChanged() {

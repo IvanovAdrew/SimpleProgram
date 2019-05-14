@@ -10,15 +10,19 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
 public class NeArrayAdapter extends ArrayAdapter<Product> {
     private ProductAmountChangesListener listener;
+    HashMap array;
 
     public void setListener(ProductAmountChangesListener listener) {
         this.listener = listener;
     }
 
-    public NeArrayAdapter(Context context, int resource, Product[] products) {
+    public NeArrayAdapter(Context context, int resource, Product[] products, HashMap array) {
         super(context, resource, products);
+        this.array=array;
 
     }
     interface ProductAmountChangesListener{
