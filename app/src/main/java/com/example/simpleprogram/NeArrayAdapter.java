@@ -12,15 +12,14 @@ import android.widget.TextView;
 
 public class NeArrayAdapter extends ArrayAdapter<Product> {
     private ProductAmountChangesListener listener;
-    TextView costOfAll;
 
     public void setListener(ProductAmountChangesListener listener) {
         this.listener = listener;
     }
 
-    public NeArrayAdapter(Context context, int resource, Product[] products,TextView costOfAll) {
+    public NeArrayAdapter(Context context, int resource, Product[] products) {
         super(context, resource, products);
-        this.costOfAll=costOfAll;
+
     }
     interface ProductAmountChangesListener{
         void onChanged();
@@ -33,7 +32,7 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
         Product newItem = getItem(position);
         if (v == null) {
             v = inflater.inflate(R.layout.item_of_array, parent, false);
-            vh = new ViewHolder(v, newItem,costOfAll);
+            vh = new ViewHolder(v, newItem);
             v.setTag(vh);
         } else {
             vh = (ViewHolder) (v.getTag());
@@ -51,7 +50,7 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
         TextView price;
         TextView amount;
         TextView name;
-        TextView costOfAll;
+
         Button btnOrder;
         ImageView image1;
         ImageView decrease;
@@ -61,7 +60,7 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
         String costOfAllStr;
 
 
-        public ViewHolder(View v, Product product,TextView costOfAll) {
+        public ViewHolder(View v, Product product) {
             this.product = product;
             this.amount = (TextView) v.findViewById(R.id.quantity);
             this.price = (TextView) v.findViewById(R.id.costOfCapuchino);
@@ -70,7 +69,6 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
             this.image1 = (ImageView) v.findViewById(R.id.cupOfSomething);
             this.decrease = (ImageView) v.findViewById(R.id.decrease);
             this.increase = (ImageView) v.findViewById(R.id.increase);
-            this.costOfAll = costOfAll;
             this.relative = v.findViewById(R.id.relative_layout);
             btnOrder.setOnClickListener(this);
             increase.setOnClickListener(this);
@@ -93,9 +91,8 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
                     stringOfAmount = ""+amount;
                     this.amount.setText(stringOfAmount);
                     product.setCostOfAllInt(product.getCostOfAllInt()+product.getCostOfProducts());
-                    /*costOfAllInt+=product.getCostOfProducts();*/
-                    costOfAllStr=""+product.getCostOfAllInt();
-                    costOfAll.setText(costOfAllStr);
+                    /*product.setCostOfAllInt(product.getCostOfAllInt()+product.getCostOfProducts());
+                    costOfAllStr=""+product.getCostOfAllInt();*/
                     break;
 
                 case (R.id.increase):
@@ -108,9 +105,8 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
                         this.increase.setVisibility(View.GONE);
                     }
                     product.setCostOfAllInt(product.getCostOfAllInt()-product.getCostOfProducts());
-                    /*costOfAllInt+=product.getCostOfProducts();*/
-                    costOfAllStr=""+product.getCostOfAllInt();
-                    costOfAll.setText(costOfAllStr);
+                    /*costOfAllStr=""+product.getCostOfAllInt();
+                    costOfAll.setText(costOfAllStr);*/
                     stringOfAmount = ""+amount;
                     this.amount.setText(stringOfAmount);
                     break;
@@ -120,15 +116,14 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
                     stringOfAmount = ""+amount;
                     this.amount.setText(stringOfAmount);
                     product.setCostOfAllInt(product.getCostOfAllInt()+product.getCostOfProducts());
-                    /*costOfAllInt+=product.getCostOfProducts();*/
-                    costOfAllStr=""+product.getCostOfAllInt();
-                    costOfAll.setText(costOfAllStr);
+                    /*costOfAllStr=""+product.getCostOfAllInt();
+                    costOfAll.setText(costOfAllStr);*/
                     break;
 
             }
             product.setQuantity(amount);
             notifyDataSetChanged();
-            //listener.onChanged();
+            listener.onChanged();
         }
     }
 }
