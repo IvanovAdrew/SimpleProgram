@@ -91,8 +91,6 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
                     stringOfAmount = ""+amount;
                     this.amount.setText(stringOfAmount);
                     product.setCostOfAllInt(product.getCostOfAllInt()+product.getCostOfProducts());
-                    /*product.setCostOfAllInt(product.getCostOfAllInt()+product.getCostOfProducts());
-                    costOfAllStr=""+product.getCostOfAllInt();*/
                     break;
 
                 case (R.id.increase):
@@ -105,8 +103,6 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
                         this.increase.setVisibility(View.GONE);
                     }
                     product.setCostOfAllInt(product.getCostOfAllInt()-product.getCostOfProducts());
-                    /*costOfAllStr=""+product.getCostOfAllInt();
-                    costOfAll.setText(costOfAllStr);*/
                     stringOfAmount = ""+amount;
                     this.amount.setText(stringOfAmount);
                     break;
@@ -116,8 +112,6 @@ public class NeArrayAdapter extends ArrayAdapter<Product> {
                     stringOfAmount = ""+amount;
                     this.amount.setText(stringOfAmount);
                     product.setCostOfAllInt(product.getCostOfAllInt()+product.getCostOfProducts());
-                    /*costOfAllStr=""+product.getCostOfAllInt();
-                    costOfAll.setText(costOfAllStr);*/
                     break;
 
             }

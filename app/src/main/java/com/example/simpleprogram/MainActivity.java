@@ -9,12 +9,13 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
-    int howMuchOreder;
-    int costOfCapuchino=34;
     TextView costOfAll;
     String costOfAllStr;
     Product[] products =new Product[5];
+    HashMap array;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,15 +35,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         listOfCappuchino.setAdapter(adapter);
-        /*Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                TextView textViewOfTotalAmount = (TextView) findViewById(R.id.TotalAmount);
-                howMuchOreder+=costOfCapuchino;
-                String howMuchOrederReal = ""+howMuchOreder;
-                textViewOfTotalAmount.setText(howMuchOrederReal);
-            }
-        });*/
     }
     private void updateElement(){
         for (Product product : products) {
